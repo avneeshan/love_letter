@@ -13,7 +13,7 @@ html, body {
 body {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end; /* Align the envelope to the bottom */
   background-color: #f0f0f0;
   font-size: 16px; /* Base font size */
 }
@@ -26,10 +26,6 @@ body {
   background-color: #fff;  /* Visible background */
   max-width: 500px;  /* Limit max width for large screens */
   max-height: 375px;  /* Limit max height */
-  display: flex; /* Use Flexbox to align content */
-  flex-direction: column; /* Stack children vertically */
-  justify-content: flex-end; /* Align contents to the bottom */
-  align-items: center; /* Center contents horizontally */
 }
 
 /* Front Paper of the Envelope */
@@ -83,12 +79,13 @@ body {
 
 /* Envelope content (notes) */
 .envelop__content {
+  position: absolute;
   width: 100%;
-  height: auto; /* Allow height to adjust based on notes */
+  height: 100%;
+  z-index: 200;
   display: flex; /* Use Flexbox for notes */
   flex-direction: column; /* Stack notes vertically */
   justify-content: flex-end; /* Align notes to the bottom */
-  align-items: center; /* Center notes horizontally */
 }
 
 .love-notes {
