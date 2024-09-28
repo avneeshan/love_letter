@@ -16,12 +16,12 @@ body {
   justify-content: center;
   align-items: flex-end; /* Align content to the bottom */
   background-color: #f0f0f0;
-  font-size: 2vw; /* Base font size in vw for responsiveness */
+  font-size: 16px; /* Base font size */
 }
 
 /* Envelope container */
 .envelop {
-  width: 75vw;  /* 75% of the viewport width */
+  width: 75%;  /* 75% of the screen width */
   height: 50vh;  /* 50% of the viewport height */
   position: relative;
   background-color: #fff;  /* Visible background */
@@ -100,18 +100,28 @@ body {
 
 .note {
   width: 95%;
-  height: 30%; /* Relative height, can adjust based on content */
+  height: 30%;
   background-color: #f9f9f9;  /* Note background color */
-  position: relative; /* Change to relative for better stacking */
+  position: absolute;
   transition: height 0.5s, opacity 0.25s;
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
-  margin: 1rem 0; /* Add margin for spacing between notes */
 }
 
-/* Adjust height for better visibility on hover */
+.note:nth-child(1) {
+  bottom: 60%;
+}
+
+.note:nth-child(2) {
+  bottom: 40%;
+}
+
+.note:nth-child(3) {
+  bottom: 20%;
+}
+
 .note:hover {
   cursor: pointer;
-  height: 40%; /* Increase height on hover */
+  height: 45%;
 }
 
 /* Text styling */
@@ -122,7 +132,7 @@ body {
 }
 
 .note__text p {
-  font-size: 1.5vw;  /* Responsive text size in vw */
+  font-size: 1rem;  /* Responsive text */
   margin-bottom: 1rem;
   color: #333;
 }
@@ -142,13 +152,13 @@ body {
 /* Responsive media queries */
 @media (max-width: 600px) {
   .envelop {
-    width: 90vw;  /* On smaller screens, take 90% of the screen width */
-    height: 80vh;  /* 80% of the screen height */
+    width: 90%;  /* On smaller screens, take 90% of the screen width */
+    height: 90%;  /* 90% of the screen height */
     margin-bottom: 5%; /* Adjust margin for smaller screens */
   }
 
   .note__text p {
-    font-size: 1.2rem;  /* Adjust text size for smaller screens */
+    font-size: 0.85rem;  /* Reduce text size for smaller screens */
   }
 }
 
@@ -159,6 +169,6 @@ body {
   }
 
   .note__text p {
-    font-size: 1.5rem;  /* Increase text size on larger screens */
+    font-size: 1.25rem;  /* Increase text size on larger screens */
   }
 }
