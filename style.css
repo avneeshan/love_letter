@@ -8,12 +8,13 @@
 html, body {
   height: 100%;
   width: 100%;
+  overflow: hidden; /* Prevent content from overflowing */
 }
 
 body {
   display: flex;
-  justify-content: center; /* Center the envelope horizontally */
-  align-items: center; /* Center the envelope vertically */
+  justify-content: center;
+  align-items: flex-end; /* Align content to the bottom */
   background-color: #f0f0f0;
   font-size: 16px; /* Base font size */
 }
@@ -67,7 +68,7 @@ body {
   height: 20%;
   position: absolute;
   margin: auto;
-  top: 30%; /* Adjust position for the sticker */
+  top: 30%;
   left: 0;
   right: 0;
   z-index: 400;
@@ -95,18 +96,28 @@ body {
 
 .note {
   width: 95%;
-  height: 30%; /* Set a fixed height */
+  height: 30%;
   background-color: #f9f9f9;  /* Note background color */
-  position: relative; /* Change to relative for better stacking */
+  position: absolute;
   transition: height 0.5s, opacity 0.25s;
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
-  margin: 1rem 0; /* Add margin for spacing between notes */
 }
 
-/* Adjust height for better visibility on hover */
+.note:nth-child(1) {
+  bottom: 60%;
+}
+
+.note:nth-child(2) {
+  bottom: 40%;
+}
+
+.note:nth-child(3) {
+  bottom: 20%;
+}
+
 .note:hover {
   cursor: pointer;
-  height: 40%; /* Increase height on hover */
+  height: 45%;
 }
 
 /* Text styling */
