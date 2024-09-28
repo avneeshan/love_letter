@@ -29,8 +29,7 @@ $fi-color: #e2e2e2;
   box-sizing: border-box;
 }
 
-html,
-body {
+html,body {
   height: 100%;
 }
 
