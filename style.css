@@ -8,10 +8,15 @@
 html, body {
   height: 100%;
   width: 100%;
+  overflow: hidden; /* Prevent content from overflowing */
+}
+
+body {
   display: flex;
   justify-content: center;
-  align-items: flex-end; /* Align items at the bottom */
+  align-items: center;
   background-color: #f0f0f0;
+  font-size: 16px; /* Base font size */
 }
 
 /* Envelope container */
@@ -22,8 +27,10 @@ html, body {
   background-color: #fff;  /* Visible background */
   max-width: 500px;  /* Limit max width for large screens */
   max-height: 375px;  /* Limit max height */
-  overflow: hidden; /* Hide any overflowing content */
-  margin-bottom: 20px; /* Add some margin at the bottom for spacing */
+  display: flex; /* Added Flexbox */
+  flex-direction: column; /* Align children in a column */
+  justify-content: center; /* Center contents vertically */
+  align-items: center; /* Center contents horizontally */
 }
 
 /* Front Paper of the Envelope */
@@ -77,18 +84,18 @@ html, body {
 
 /* Envelope content (notes) */
 .envelop__content {
-  position: absolute;
+  position: relative; /* Changed from absolute to relative */
   width: 100%;
   height: 100%;
-  z-index: 200;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end; /* Align content to the bottom */
+  display: flex; /* Added Flexbox */
+  flex-direction: column; /* Align notes in a column */
+  justify-content: space-evenly; /* Evenly space notes vertically */
+  align-items: center; /* Center notes horizontally */
 }
 
 .love-notes {
   width: 100%;
-  height: auto; /* Allow height to adjust based on content */
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -96,24 +103,16 @@ html, body {
 
 .note {
   width: 95%;
-  height: 30%; /* Adjusted to fit all notes within the height */
+  height: 25%; /* Adjusted to fit all notes within the height */
   background-color: #f9f9f9;  /* Note background color */
-  position: relative; /* Changed to relative for stacking */
+  position: relative; /* Changed from absolute to relative */
   transition: height 0.5s, opacity 0.25s;
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
-.note:nth-child(1) {
-  margin-bottom: 5%; /* Add space between notes */
-}
-
-.note:nth-child(2) {
-  margin-bottom: 5%; /* Add space between notes */
-}
-
 .note:hover {
   cursor: pointer;
-  height: 40%; /* Increase size on hover */
+  height: 40%;
 }
 
 /* Text styling */
@@ -144,8 +143,8 @@ html, body {
 /* Responsive media queries */
 @media (max-width: 600px) {
   .envelop {
-    width: 90%;  /* On smaller screens, take 90% of the screen width */
-    height: 90%;  /* 90% of the screen height */
+    width: 80vw;  /* On smaller screens, take 80% of the screen width */
+    height: 80vh;  /* 80% of the screen height */
   }
 
   .note__text p {
@@ -155,8 +154,8 @@ html, body {
 
 @media (min-width: 1024px) {
   .envelop {
-    max-width: 600px;  /* On larger screens, limit max size for better appearance */
-    max-height: 450px;
+    max-width: 500px;  /* On larger screens, limit max size for better appearance */
+    max-height: 375px;
   }
 
   .note__text p {
