@@ -8,7 +8,6 @@
 html, body {
   height: 100%;
   width: 100%;
-  overflow: hidden; /* Prevent content from overflowing */
 }
 
 body {
@@ -72,7 +71,7 @@ body {
   height: 20%;
   position: absolute;
   margin: auto;
-  top: 30%;
+  top: 30%; /* Adjusted position to not interfere with notes */
   left: 0;
   right: 0;
   z-index: 400;
@@ -101,7 +100,7 @@ body {
 
 .note {
   width: 95%;
-  height: 30%; /* Adjusted to fit all notes within the height */
+  height: auto; /* Set to auto to allow dynamic height based on content */
   background-color: #f9f9f9;  /* Note background color */
   position: relative; /* Change to relative for better stacking */
   transition: height 0.5s, opacity 0.25s;
