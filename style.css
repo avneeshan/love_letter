@@ -21,12 +21,12 @@ body {
 
 /* Envelope container */
 .envelop {
-  width: 75vw;  /* 75% of the viewport width */
-  height: 75vh;  /* 75% of the viewport height */
+  width: 50vw;  /* 50% of the viewport width */
+  height: 50vh;  /* 50% of the viewport height */
   position: relative;
   background-color: #fff;
-  max-width: 900px; /* Limit max width to fit within 1080p */
-  max-height: 675px; /* Maintain aspect ratio for max height */
+  max-width: 450px; /* Limit max width for larger screens */
+  max-height: 337.5px; /* Maintain aspect ratio for max height */
   overflow: hidden; /* Hide any overflowing content */
 }
 
@@ -98,7 +98,7 @@ body {
 
 .note {
   width: 95%;
-  height: 25%; /* Adjusted to fit all notes within 75% of height */
+  height: 25%; /* Adjusted to fit all notes within 50% of the height */
   background-color: #f9f9f9;
   position: absolute;
   transition: height 0.5s, opacity 0.25s;
@@ -150,8 +150,8 @@ body {
 /* Responsive media queries */
 @media (max-width: 600px) {
   .envelop {
-    width: 90vw;  /* On smaller screens, take 90% of the viewport width */
-    height: 90vh;  /* 90% of the viewport height */
+    width: 80vw;  /* On smaller screens, take 80% of the viewport width */
+    height: 80vh;  /* 80% of the viewport height */
   }
 
   .note__text p {
@@ -161,8 +161,8 @@ body {
 
 @media (min-width: 1024px) {
   .envelop {
-    max-width: 900px;  /* On larger screens, limit max size */
-    max-height: 675px;
+    max-width: 450px;  /* On larger screens, limit max size */
+    max-height: 337.5px;
   }
 
   .note__text p {
