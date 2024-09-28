@@ -10,7 +10,7 @@ html, body {
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end; /* Align items at the bottom */
   background-color: #f0f0f0;
 }
 
@@ -23,6 +23,7 @@ html, body {
   max-width: 500px;  /* Limit max width for large screens */
   max-height: 375px;  /* Limit max height */
   overflow: hidden; /* Hide any overflowing content */
+  margin-bottom: 20px; /* Add some margin at the bottom for spacing */
 }
 
 /* Front Paper of the Envelope */
@@ -81,8 +82,8 @@ html, body {
   height: 100%;
   z-index: 200;
   display: flex;
-  justify-content: center; /* Center content horizontally */
-  align-items: center; /* Center content vertically */
+  flex-direction: column;
+  justify-content: flex-end; /* Align content to the bottom */
 }
 
 .love-notes {
