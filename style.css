@@ -26,6 +26,10 @@ body {
   background-color: #fff;  /* Visible background */
   max-width: 500px;  /* Limit max width for large screens */
   max-height: 375px;  /* Limit max height */
+  display: flex; /* Use Flexbox to align content */
+  flex-direction: column; /* Stack children vertically */
+  justify-content: flex-end; /* Align contents to the bottom */
+  align-items: center; /* Center contents horizontally */
 }
 
 /* Front Paper of the Envelope */
@@ -67,7 +71,7 @@ body {
   height: 20%;
   position: absolute;
   margin: auto;
-  top: 30%;
+  top: 30%; /* Adjust position for the sticker */
   left: 0;
   right: 0;
   z-index: 400;
@@ -79,15 +83,16 @@ body {
 
 /* Envelope content (notes) */
 .envelop__content {
-  position: absolute;
   width: 100%;
-  height: 100%;
-  z-index: 200;
+  height: auto; /* Allow height to adjust based on notes */
+  display: flex; /* Use Flexbox for notes */
+  flex-direction: column; /* Stack notes vertically */
+  justify-content: flex-end; /* Align notes to the bottom */
+  align-items: center; /* Center notes horizontally */
 }
 
 .love-notes {
   width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -95,28 +100,18 @@ body {
 
 .note {
   width: 95%;
-  height: 30%;
+  height: 30%; /* Set a fixed height */
   background-color: #f9f9f9;  /* Note background color */
-  position: absolute;
+  position: relative; /* Change to relative for better stacking */
   transition: height 0.5s, opacity 0.25s;
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  margin: 1rem 0; /* Add margin for spacing between notes */
 }
 
-.note:nth-child(1) {
-  bottom: 60%;
-}
-
-.note:nth-child(2) {
-  bottom: 40%;
-}
-
-.note:nth-child(3) {
-  bottom: 20%;
-}
-
+/* Adjust height for better visibility on hover */
 .note:hover {
   cursor: pointer;
-  height: 45%;
+  height: 40%; /* Increase height on hover */
 }
 
 /* Text styling */
