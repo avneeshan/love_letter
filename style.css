@@ -8,24 +8,21 @@
 html, body {
   height: 100%;
   width: 100%;
-}
-
-body {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #f0f0f0;
-  font-size: 16px; /* Base font size */
 }
 
 /* Envelope container */
 .envelop {
-  width: 75%;  /* 75% of the screen width */
-  height: 75%;  /* 75% of the screen height */
+  width: 50vw;  /* 50% of the viewport width */
+  height: 50vh;  /* 50% of the viewport height */
   position: relative;
   background-color: #fff;  /* Visible background */
   max-width: 500px;  /* Limit max width for large screens */
   max-height: 375px;  /* Limit max height */
+  overflow: hidden; /* Hide any overflowing content */
 }
 
 /* Front Paper of the Envelope */
@@ -83,11 +80,14 @@ body {
   width: 100%;
   height: 100%;
   z-index: 200;
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
 }
 
 .love-notes {
   width: 100%;
-  height: 100%;
+  height: auto; /* Allow height to adjust based on content */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -95,28 +95,24 @@ body {
 
 .note {
   width: 95%;
-  height: 30%;
+  height: 30%; /* Adjusted to fit all notes within the height */
   background-color: #f9f9f9;  /* Note background color */
-  position: absolute;
+  position: relative; /* Changed to relative for stacking */
   transition: height 0.5s, opacity 0.25s;
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
 .note:nth-child(1) {
-  bottom: 60%;
+  margin-bottom: 5%; /* Add space between notes */
 }
 
 .note:nth-child(2) {
-  bottom: 40%;
-}
-
-.note:nth-child(3) {
-  bottom: 20%;
+  margin-bottom: 5%; /* Add space between notes */
 }
 
 .note:hover {
   cursor: pointer;
-  height: 45%;
+  height: 40%; /* Increase size on hover */
 }
 
 /* Text styling */
